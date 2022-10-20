@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    {% include head.html %}
+  <body>
+    <section class="hero is-dark is-halfheight ">
+
+        <div class="hero-head">
+            {% include header.html %}
+    
+        </div>
+    
+    
+        <div class="hero-body">
+            <div class="container has-text-centered is-centered">
+                <h1 class="title is-1">
+                  {{ page.title | escape }}
+                </h1>
+                <p class="subtitle">
+                  {%- assign date_format = site.bootstrap.date_format | default: "%b %-d, %Y" -%}
+                  {{ page.date | date: date_format }}
+                </p>
+              </div>
+        </div>
+    </section>
+
+    <div class="post-content"> {{content}} </div>
+
+
+
+    <script src="https://unpkg.com/bulma-modal-fx/dist/js/modal-fx.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.9.1/js/OverlayScrollbars.min.js'></script>  
+    <script src="../assets/js/wild.js"></script>
+
+          {% include footer.html %}
+  </body>
+</html>

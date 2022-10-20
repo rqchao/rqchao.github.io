@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    {% include head.html %}
+  <body>
+    <section class="hero is-dark is-fullheight ">
+
+        <div class="hero-head">
+            {% include header.html %}
+    
+        </div>
+    
+    
+        <div class="hero-body ">
+            <div class="container has-text-centered is-centered">
+                <figure class="avatar image">
+                    <a href="{{ "/" | relative_url }}">
+                        <img class="is-rounded" src="https://picsum.photos/300" alt="">
+                    </a>
+                </figure>
+                <h1 class="title is-1">
+                  {{ site.title }}
+                </h1>
+                <p class="subtitle">
+                  {{ site.description }}
+                </p>
+
+                <div class="socials">
+                  {% for i in site.contacts %}
+                  <a href="{{i.url}}" target="_blank">
+                    <i class="fa-brands fa-{{i.title}} fa-lg"></i>
+            
+                  </a>
+            
+                  {%endfor%}
+
+                  {% assign email = site.contacts | where:"title", "email"%}
+                  {% for item in email %}
+                    {% if item.title == "email" %}
+                    <a href="{{ item.url }}" target="_blank">
+                      <i class="fa-solid fa-envelope fa-lg" style="margin-left: -4px;"></i>
+                    </a>
+                    {% endif %}
+                  {%endfor%}
+            
+                </div>
+              </div>
+        </div>
+    </section>
+
+    {% include posts.html %}
+
+
+    <script src="https://unpkg.com/bulma-modal-fx/dist/js/modal-fx.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.9.1/js/OverlayScrollbars.min.js'></script>  
+    <script src="../assets/js/wild.js"></script>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+        //The first argument are the elements to which the plugin shall be initialized
+        //The second argument has to be at least a empty object or a object with your desired options
+        OverlayScrollbars(document.querySelectorAll("body"), { });
+        });
+        </script>  
+          {% include footer.html %}
+  </body>
+</html>
