@@ -1,127 +1,80 @@
---- 
---- 
+---
+---
+@import 'libs/vars';
+@import 'libs/functions';
+@import 'libs/mixins';
+@import 'libs/skel';
+@import 'font-awesome.min.css';
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600,600italic');
 
+/*
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+*/
 
-$navbar-font-color: white;
-$background-dark-gray: #23262a;
-$tiles-background: #2c3037;
+	@include skel-breakpoints((
+		xlarge: '(max-width: 1680px)',
+		large: '(max-width: 1280px)',
+		medium: '(max-width: 980px)',
+		small: '(max-width: 736px)',
+		xsmall: '(max-width: 480px)',
+		xxsmall: '(max-width: 360px)'
+	));
 
-.hero-img {
-    max-width: 250px;
-    margin: 0 auto;
-}
+	@include skel-layout((
+		reset: 'full',
+		boxModel: 'border',
+		grid: ( gutters: 2em ),
+		breakpoints: (
+			large: (
+				grid: ( gutters: 1.5em )
+			),
+			small: (
+				grid: ( gutters: 1.25em )
+			)
+		)
+	));
 
-body {
-    background-color: $background-dark-gray;
+	@mixin inner {
+		> .inner {
+			@include padding(4em, 0);
+			margin: 0 auto;
+			max-width: _size(inner);
+			width: calc(100% - 6em);
 
-    p {
-        strong {
-            color: white;
-        }
-    }
+			@include breakpoint(small) {
+				@include padding(3em, 0);
+				width: calc(100% - 3em);
+			}
+		}
+	}
 
-}
+// Base.
 
+	@import 'base/page';
+	@import 'base/typography';
 
+// Component.
 
-.hero.is-dark {
-    background-color: $background-dark-gray;
-    .navbar {
+	@import 'components/section';
+	@import 'components/form';
+	@import 'components/box';
+	@import 'components/icon';
+	@import 'components/image';
+	@import 'components/list';
+	@import 'components/table';
+	@import 'components/button';
+	@import 'components/tiles';
+	@import 'components/contact-method';
+	@import 'components/spotlights';
 
-        .navbar-brand {
+// Layout.
 
-            .title {
-
-                color: $navbar-font-color;
-            }
-        }
-
-        .navbar-item {
-            &.has-dropdown {
-                color: $navbar-font-color;
-            }
-        }
-
-        .navbar-dropdown {
-            color: black;
-
-            .navbar-item {
-                &:hover {
-                    outline: 1px solid #cacccc;
-
-                }
-            }
-        }
-    }
-
-    
-    .socials {
-        i {
-          font-size: 20px;
-          color: white;
-          transition: all 0.2s ease-in-out;
-      
-          &:hover {
-            transform: scale(1.2);
-          }
-        }
-      }
-
-    .subtitle {
-    }
-    .avatar {
-        margin: 0 auto 1rem auto;
-        max-width: 250px;
-        max-height: 250px;
-        border-radius: 100%;
-        box-shadow: 0 4px 32px 0 black;
-        outline: 2px solid white;
-        &:hover {
-            box-shadow: 0 4px 32px 0 white;
-
-        }
-    }
-}
-
-
-.tile {
-    border-radius: 1rem;
-    transition: all 0.2s ease-in-out;
-
-    a {
-        box-shadow: 0 2px 18px 0 black;
-
-        background-color: $tiles-background;
-        &:hover {
-            transform: scale(1.05);
-
-        }
-    }
-
-    .is-parent {
-
-    }
-    &.is-danger {
-        background-color: black;
-    }
-
-    .post-img {
-        border-radius: 1rem;
-    }
-
-}
-
-
-
-.footer {
-    color: white;
-    background-color: $background-dark-gray;
-    a{
-        font-weight: 500;
-
-        &:hover {
-            border-bottom: 1px solid;
-
-        }
-    }
-}
+	@import 'layout/header';
+	@import 'layout/banner';
+	@import 'layout/main';
+	@import 'layout/contact';
+	@import 'layout/footer';
+	@import 'layout/wrapper';
+	@import 'layout/menu';
