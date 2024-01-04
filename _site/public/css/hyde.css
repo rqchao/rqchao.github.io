@@ -30,7 +30,7 @@
  *
  * Update the foundational and global aspects of the page.
  */
-
+/* 
 html {
   font-family: "PT Sans", Helvetica, Arial, sans-serif;
 }
@@ -43,7 +43,7 @@ html {
   html {
     font-size: 20px;
   }
-}
+} */
 
 
 /*
@@ -83,7 +83,10 @@ html {
   font-size: 3.25rem;
 }
 
-/* Sidebar nav */
+.sidebar-expanded {
+  flex: 1; 
+}
+
 .sidebar-nav {
   margin-bottom: 1rem;
 }

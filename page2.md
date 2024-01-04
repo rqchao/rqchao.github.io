@@ -1,6 +1,6 @@
 ---
 layout: page
-title: To elucidate
+title: To cultivate
 ---
 
 <p class="message">

@@ -7,7 +7,7 @@ permalink:        pretty
 
 # Setup
 title:            Richard Chao
-tagline:          'Work hard. Have fun. Make history.'
+# tagline:          'Work hard. Have fun. Make history.'
 description:      'M.E.T. @ UC Berkeley'
 url:              http://rqchao.github.io
 baseurl:          /

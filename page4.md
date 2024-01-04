@@ -1,6 +1,6 @@
 ---
 layout: page
-title: To elucidate
+title: To innovate
 ---
 
 <p class="message">
