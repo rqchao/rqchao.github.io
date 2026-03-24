@@ -1,0 +1,18 @@
+---
+type Item = {
+	title: string;
+	href: string;
+	description?: string;
+};
+
+const { items = [] } = Astro.props as { items: Item[] };
+---
+
+<ul class="list">
+	{items.map((item) => (
+		<li>
+			<a href={item.href}>{item.title}</a>
+			{item.description ? <div class="muted">{item.description}</div> : null}
+		</li>
+	))}
+</ul>

@@ -1,0 +1,23 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ItemList from "../../components/ItemList.astro";
+import { SITE } from "../../config/site";
+import { getBlogPosts } from "../../lib/content";
+
+const posts = await getBlogPosts();
+const postItems = posts.map((post) => ({
+	title: post.data.title,
+	href: `/blog/${post.slug}/`,
+	description: post.data.summary,
+}));
+---
+
+<BaseLayout title={`${SITE.siteTitle} | Blog`}>
+	<main class="page">
+		<h1>Blog</h1>
+		<section class="tile">
+			<h2 class="tile-title">Latest</h2>
+			<ItemList items={postItems} />
+		</section>
+	</main>
+</BaseLayout>

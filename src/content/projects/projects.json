@@ -1,0 +1,14 @@
+[
+	{
+		"name": "Minimal Status Board",
+		"oneLiner": "Astro + Matter.js playground with a dropping golf ball.",
+		"href": "https://example.com",
+		"tags": ["astro", "matter"]
+	},
+	{
+		"name": "Links Directory",
+		"oneLiner": "A tidy index of resume, GitHub, and contact.",
+		"href": "https://example.com",
+		"tags": ["static"]
+	}
+]

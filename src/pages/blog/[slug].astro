@@ -1,0 +1,28 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import { SITE } from "../../config/site";
+import { formatDate } from "../../lib/format";
+
+export async function getStaticPaths() {
+	const posts = await getCollection("blog");
+	return posts.map((post) => ({
+		params: { slug: post.slug },
+		props: { post },
+	}));
+}
+
+const { post } = Astro.props;
+---
+
+<BaseLayout title={`${SITE.siteTitle} | ${post.data.title}`}>
+	<main class="page">
+		<article class="tile">
+			<h1 class="tile-title">{post.data.title}</h1>
+			<p class="muted">{formatDate(post.data.date)}</p>
+			<div>
+				<post.Content />
+			</div>
+		</article>
+	</main>
+</BaseLayout>

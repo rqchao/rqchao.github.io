@@ -1,0 +1,23 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ItemList from "../components/ItemList.astro";
+import { SITE } from "../config/site";
+import { getProjects } from "../lib/content";
+
+const projects = await getProjects();
+const projectItems = projects.map((project) => ({
+	title: project.name,
+	href: project.href,
+	description: project.oneLiner,
+}));
+---
+
+<BaseLayout title={`${SITE.siteTitle} | Projects`}>
+	<main class="page">
+		<h1>Projects</h1>
+		<section class="tile">
+			<h2 class="tile-title">Selected</h2>
+			<ItemList items={projectItems} />
+		</section>
+	</main>
+</BaseLayout>

@@ -1,0 +1,62 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import physicsUrl from "../scripts/physics.ts?url";
+import { SITE } from "../config/site";
+---
+
+<BaseLayout title={SITE.siteTitle}>
+	<main class="page">
+		<header class="hero">
+			<h1>
+        Hi, I'm Richard
+				<span id="hero-dot" role="button" tabindex="0" aria-label="Drop ball"
+					>.</span
+				>
+			</h1>
+			<p class="hero-line">
+				<span class="accent">Seasonal Obsession:</span>
+				<strong>Tennis</strong>
+			</p>
+			<nav class="links-row" aria-label="Primary">
+				<a href={SITE.links.resume}>Resume</a>
+				<a href={SITE.links.linkedin}>LinkedIn</a>
+				<a href={SITE.links.github}>GitHub</a>
+				<a href={SITE.links.email}>Email</a>
+			</nav>
+		</header>
+
+		<section class="notes">
+			<p>based in San Francisco</p>
+			<p>
+				Working on large-scale document and retrieval infrastructure at Glean.
+				Previously{" "}
+				<a
+					href="https://www.linkedin.com/posts/sisu-data_weve-spent-the-last-five-years-working-on-activity-7119690491054485505-v2vL/"
+					>Sisu Data</a
+				>{" "}
+				&amp;{" "}
+				<a
+					href="https://www.databricks.com/blog/tecton-joining-databricks-power-real-time-data-personalized-ai-agents"
+					>Tecton</a
+				>.
+			</p>
+			<p>
+				I like designing systems—technical or personal—that reduce friction,
+				encourage clarity, and scale over time.
+      </p>
+			<p>
+				<a href={SITE.links.attention}>Stuff I'm paying attention to</a>
+			</p>
+      <p>also golf, tennis, travel</p>
+		</section>
+		<footer class="footer">
+			<a href="#" data-reset>Reset ball</a>
+			<span class="muted">Sound:</span>
+			<button class="link-button" type="button" data-sound-toggle>
+				On
+			</button>
+		</footer>
+	</main>
+
+	<script type="module" src={physicsUrl}></script>
+</BaseLayout>
